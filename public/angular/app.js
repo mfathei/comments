@@ -2,11 +2,13 @@
  * Created by mohamed on 5/15/2017.
  */
 
+'use strict';
+
 var commentApp = angular.module('commentApp', ['ngRoute', 'mainCtrl', 'commentService']);
 
 // change angular brackets to {[{ }]} so we still can use Blade {{ }}
 commentApp.config(function($interpolateProvider){
-    $interpolateProvider.startSymbol('[{[');
+    $interpolateProvider.startSymbol('{[{');
     $interpolateProvider.endSymbol('}]}');
 });
 
@@ -19,3 +21,5 @@ commentApp.config(function($routeProvider, $locationProvider){
 
     $locationProvider.html5Mode(true);
 });
+
+console.log('app loaded');
